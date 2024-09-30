@@ -4,11 +4,19 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-counter',
   template: `
     <h3>Counter: {{ counter }}</h3>
-    <button (click)="increaseBy(1)">Incrementar</button>
+    <button (click)="increaseBy(-1)">-1</button>
     <button (click)="resetCounter()">Reset</button>
-    <button (click)="increaseBy(-1)">Decrementar</button>
+    <button (click)="increaseBy(1)">+1</button>
   `,
 })
 export class CounterComponent {
-  constructor() {}
+  public counter: number = 0;
+
+  public increaseBy(value: number): void {
+    this.counter += value;
+  }
+
+  public resetCounter(): void {
+    this.counter = 0;
+  }
 }
