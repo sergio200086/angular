@@ -1,17 +1,25 @@
 <h4>List</h4>
 <ul class="list-group">
-    <li *ngFor="let character of characterList; 
-    let i = index;
-    let isFirst = first;
-    let isLast = last;
-    let isEven = even;
-    let isOdd = odd
-    " 
-    class="list-group-item"
-    [ngClass]="{'list-group-item-success': character.power >= 5000}">
-    <span class="text-primary">{{i+1}}. </span>
-    <span>{{character.name}} - </span>
-    <strong>Power: </strong>
-    <span>{{character.power}} </span>
-    </li>
+  <li
+    *ngFor="
+      let character of characterList;
+      let i = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd
+    "
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{ 'list-group-item-success': character.power >= 5000 }"
+  >
+    <div>
+      <span class="text-primary">{{ i + 1 }}. </span>
+      <span>{{ character.name }} - </span>
+      <strong>Power: </strong>
+      <span>{{ character.power }} </span>
+    </div>
+    <button (click)="onDeleteCharacter(i)" class="btn btn-outline-danger">
+      Delete
+    </button>
+  </li>
 </ul>
