@@ -6,14 +6,14 @@
     The Output from the components are going to be listened here, what means that we could trigger methods from here 
     with the event -->
     <dbz-character-list
-      (deleteCharacter)="deleteCharacter($event)"
-      [characterList]="characters"
+      (deleteCharacter)="dbz.deleteCharacter($event)"
+      [characterList]="dbz.characters"
     ></dbz-character-list>
   </div>
   <div class="col">
     <!-- All the events are related to the component itself  -->
     <dbz-add-character
-      (onNewCharacter)="onNewCharacter($event)"
+      (onNewCharacter)="dbz.onNewCharacter($event)"
     ></dbz-add-character>
   </div>
 </div>
