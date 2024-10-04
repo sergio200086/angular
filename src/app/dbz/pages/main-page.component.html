@@ -2,12 +2,16 @@
 <hr />
 <div class="row">
   <div class="col">
+    <!-- Whatever happens in the event (deleteCharacter) its going to trigger the deleteCharacter method from the component from this html
+    The Output from the components are going to be listened here, what means that we could trigger methods from here 
+    with the event -->
     <dbz-character-list
       (deleteCharacter)="deleteCharacter($event)"
       [characterList]="characters"
     ></dbz-character-list>
   </div>
   <div class="col">
+    <!-- All the events are related to the component itself  -->
     <dbz-add-character
       (onNewCharacter)="onNewCharacter($event)"
     ></dbz-add-character>

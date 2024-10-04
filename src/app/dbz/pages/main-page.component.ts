@@ -6,6 +6,7 @@ import { Character } from '../interfaces/character.interface';
   templateUrl: './main-page.component.html',
 })
 export class MainPageComponent {
+  // All the propertisof this component are available in the HTML file
   public characters: Character[] = [
     {
       name: 'Krillin',
@@ -21,6 +22,7 @@ export class MainPageComponent {
     },
   ];
 
+  // This is coming from the add character form, so when the form is submitted, we will receive the character here.
   public onNewCharacter(character: Character): void {
     console.log(character);
     this.characters.push(character);
@@ -28,7 +30,6 @@ export class MainPageComponent {
 
   public deleteCharacter(index: number): void {
     console.log(index);
-
     this.characters.splice(index, 1);
   }
 }
